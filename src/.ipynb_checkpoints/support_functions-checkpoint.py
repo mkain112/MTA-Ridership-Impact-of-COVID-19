@@ -53,6 +53,16 @@ def get_turnstile_data():
     return turnstile2019_df, turnstile2020_df
 
 
+def clean_up_turnstile_data(df):
+    '''checks and gets rid of turnstile data duplicate entries and Drops unneeded columns'''
+    
+    # Get rid of the duplicate entry
+    df.sort_values(["C/A", "Unit", "SCP", "Station", "Date", "Time"], inplace=True, ascending=False)
+    df.drop_duplicates(subset=["C/A", "Unit", "SCP", "Station", "Date", "Time"], inplace=True)
+    df = df.drop(["Exits", "Description"], axis=1, errors="ignore")
+    
+    return df
+    
 def fixing_datetime(df):
     '''Converts DataFrame Date Column to DateTime Format'''
     
