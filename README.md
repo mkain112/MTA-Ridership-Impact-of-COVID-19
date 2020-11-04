@@ -31,6 +31,107 @@ Coronavirus disease (COVID-19) is an infectious disease caused by a newly discov
 ***Individual***: NYC unemployment rate is 16%, twice as high as the rest of the country.
 
 # Exploratory Data Analysis
+## Turnstile Datasets
 Before I could run any hypothesis tests to try and help answer the questions I had, I first had to clean and make sense of the turnstile data from the MTA. The first thing I wanted to know before proceeding any further was, is there a difference in turnstile usage between 2019 and 2020. Since the data for the coronavirus didn't start until March 1, 2020. I decided to compare the timeframes of March 1st thru September 30th, for both 2019 and 2020. After cleaning the turnstile data for daily usuage across the city, I found the following results:
 
+
+![image info](img/ridership_2019.png)
+
+I wanted to see what the drops in 2019 were from, so after further analysis, I discovered those were all during holiday weekends (i.e. Easter, Memorial Day, 4th of July, and Labor Day). 
+
+![image info](img/ridership_2020.png)
+
+As you can see, during the month of March there was a significant drop in turnstile usage. It then started to rise again but nothing compared to the turnstile usage from 2019 for the same times.
+
+![image info](img/ridership_2019_vs_2020_2.png)
+
+
+Next I broke up the turnstile usage datasets by station and compared the top 5 used stations in 2019 with those same stations in 2020 and found the following: 
+
+
+![image info](img/top5_stations.png)
+
+
+
+It was pretty obvious at this point that there was indeed a significant drop of turnstile usage in 2020. But just to be sure, I ran my first hypothesis test. My Null Hypothesis was that there was NO difference in MTA turnstile usage between March 1st thru September 30th for 2019 and 2020; I ran my experiment with a significance level of 0.05. My conclusion was that there is sufficient statistical evidence that there was a difference in MTA Turnstile usage during those times, with a p-value very close to zero.
+
+
+## COVID-19 Datasets
+In my coronavirus datasets I had the following features:
+* Totals Datasets
+    * Positive case counts by zip code
+    * Positive case counts by borough
+    * Hospitalizations by borough
+    * Deaths by borough
+* Testing Datasets
+    * Tests given by day
+    * Positive results by day
+    * Tests given by zip code
+    * Positive results by zip code
+    
+First thing I did was look at the citywide numbers. I found that between March 1, 2020 and September 30, 2020, there were 252,281 cases, 58,695 hospitalizations, and 19,314 deaths from the coronavirus.
+
+After that, I analized the datasets by borough. That is where I found the following results:
+
+
+![image info](img/Pie_Chart_By_Boro.png)
+
+
+This all made sense, considering Queens, Brooklyn, and the Bronx have the highest population in NYC. I wanted to find out if the hospitalizations and deaths followed suit with the case count and found that they did as shown below.
+
+![image info](img/covid_by_boro.png)
+
+After breaking the datasets down by borough, I then proceeded to break them down by zip codes to try and isolate the coronavirus hotspots.
+
+![image info](img/hotspots.png)
+
+I found that the neighborhood with the highest case count of the coronavirus was Corona, Queens, with a case count of 5,313. The least case count was the Financial District in Manhatten, with a case count of 52.
+
+I then wanted to compare this information with the median household income levels of each zip code and found the following:
+
+![image info](img/income.png)
+
+After looking at both graphs, it seemed to me that the zip codes with the higher median household incomes tended to have less coronavirus cases. I then adjusted for population and found the following results:
+
+![image info](img/case_ratio_boxplot.png)
+
+Seeing this somewhat confirmed my theory but I had to be sure. So I then conducted my second hypothesis test.
+
+My Null Hypothesis was that there is no difference in the covid-19 case count ratio and median household incomes, with a significance level of 0.05. My conclusion was that there was sufficient statistical evidence to say there is a difference in the COVID-19 case count ratio and median household incomes, with a p-value close to 0. 
+
+My next step was to look at the testing datasets. First by comparing tests given by day with positive results by day.
+
+![image info](img/covid_testing.png)
+
+As you can see, during the beginning of the pandemic, the amount of tests given and the amount of positive results were following a similar slope. However, about the first of second week of April, the positive tests started to decline. That led me to wonder why. After some investigation I have come to the conclusion that it was because during the time where they followed a similar slope, coronavirus tests were only given to people who they really though might of had it because of test availability. But as tests became more available and people started to quarentine and social distance, tests given continues to rise on a daily basis and positive results started to decline.
+
+I then wondered, how many tests were given and how many of them came back positive?
+
+I found that from the timeframe of March 1, 2020 and September 30, 2020, there were 4,487,431 tests given in NYC and 289,475 of them came back positive for COVID-19. The trend of tests given and positive results is shown below.
+
+![image info](img/Cumulative_Tests.png)
+
+
+As I did with the case counts above, I then proceeded to break up these datasets by zip codes. I found the following:
+
+![image info](img/tests.png)
+
+I then looked at the tests given and compared it with the median household incomes and saw that it seemed that less tests were given to the more wealthier neighborhoods. Just like before I then adjusted for population and found the following results.
+
+![image info](img/test_ratio_boxplot.png)
+
+This showed something different; showing that there was indeed more tests given to weathier neighborhoods but the medians seemed very close. This was when I wanted to verify and decided to run my third hypothesis test.
+
+
+My Null Hypothesis was that there is no difference in the testing rate given and median household incomes, I ran my experiment with a significance level of 0.05. My conclusion was that there is sifficient statistical evidence to say there is a difference in the testing rate given and median household incomes, with a p-value close to 0.
+
+
+# Conclusion
+* There was indeed a difference in MTA usage between 2019 and 2020. In 2020, turnstile usage dropped significantly.
+* Covid-19 was a main contributor to this.
+* Lower Median Household Income levels do coincide with less tests available and more COVID-19 cases.
+
+# Next Steps
+* Collect more data after this winter to see if trends stay the same.
+* Look into other causes why people may have stopped taking the subways (i.e. MTA policies, Safety due to new laws, etc.).
 
