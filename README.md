@@ -69,6 +69,7 @@ In my coronavirus datasets I had the following features:
     * Tests given by zip code
     * Positive results by zip code
     
+## Totals Datasets
 First thing I did was look at the citywide numbers. I found that between March 1, 2020 and September 30, 2020, there were 252,281 cases, 58,695 hospitalizations, and 19,314 deaths from the coronavirus.
 
 After that, I analized the datasets by borough. That is where I found the following results:
@@ -99,6 +100,7 @@ Seeing this somewhat confirmed my theory but I had to be sure. So I then conduct
 
 My Null Hypothesis was that there is no difference in the covid-19 case count ratio and median household incomes, with a significance level of 0.05. My conclusion was that there was sufficient statistical evidence to say there is a difference in the COVID-19 case count ratio and median household incomes, with a p-value close to 0. 
 
+## Testing Datasets
 My next step was to look at the testing datasets. First by comparing tests given by day with positive results by day.
 
 ![image info](img/covid_testing.png)
