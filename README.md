@@ -1,7 +1,7 @@
 # MTA-Ridership-Impact-of-COVID-19
 ## How COVID-19 Effected MTA Usage in NYC
 
-  I am a New Yorker, living in Queens, who takes the MTA daily; well, I used to until the quarentines started. One thing I noticed the times I did take the subway was that it is alot less crowded than it usually is. That had me thinking, was it just me or was this the actual case. That is what lead me to do this project and find out if it was all in my head or this was a reality. In this analysis, I perform some Exploritory Data Analysis (EDA) on turnstile data from 2019 and 2020, as well COVID-19 data for the city of New York. I perform a few Hypothesis Tests to see if there was a difference in turnstile usage and how coronavirus cases and tests given correlate with median household income levels. My goal is to find out if COVID-19 had an effect on MTA usage and to find out what nieghborhoods did it effect more.
+  I am a New Yorker, living in Queens, who takes the MTA daily; well, I used to until the quarentines started. One thing I noticed the times I did take the subway was that it is alot less crowded than it usually is. That had me thinking, was it just me or was this the actual case. That is what lead me to do this project and find out if it was all in my head or this was a reality. In this analysis, I performed some Exploritory Data Analysis (EDA) on turnstile datasets from 2019 and 2020, as well COVID-19 data for the city of New York. I performed a few Hypothesis Tests to see if there was a difference in turnstile usage and how coronavirus cases and tests given correlate with median household income levels. My goal is to find out if COVID-19 had an effect on MTA usage and to find out what nieghborhoods did it effect more.
   
 # About the Data
 I retreaved the datasets from the following places:
@@ -32,12 +32,12 @@ Coronavirus disease (COVID-19) is an infectious disease caused by a newly discov
 
 # Exploratory Data Analysis
 ## Turnstile Datasets
-Before I could run any hypothesis tests to try and help answer the questions I had, I first had to clean and make sense of the turnstile data from the MTA. The first thing I wanted to know before proceeding any further was, is there a difference in turnstile usage between 2019 and 2020. Since the data for the coronavirus didn't start until March 1, 2020. I decided to compare the timeframes of March 1st thru September 30th, for both 2019 and 2020. After cleaning the turnstile data for daily usuage across the city, I found the following results:
+Before I could run any hypothesis tests to try and help answer the questions I had, I first had to clean and make sense of the turnstile datasets from the MTA. The first thing I wanted to know before proceeding any further was, is there a difference in turnstile usage between 2019 and 2020. Since the data for the coronavirus didn't start until March 1, 2020. I decided to compare the timeframes of March 1st thru September 30th, for both 2019 and 2020. After cleaning the turnstile data for daily usuage across the city, I found the following results:
 
 
 ![image info](img/ridership_2019.png)
 
-I wanted to see what the drops in 2019 were from, so after further analysis, I discovered those were all during holiday weekends (i.e. Easter, Memorial Day, 4th of July, and Labor Day). 
+I wanted to see what the drops in 2019 were from. After further analysis, I discovered those were all during holiday weekends (i.e. Easter, Memorial Day, 4th of July, and Labor Day). 
 
 ![image info](img/ridership_2020.png)
 
@@ -103,7 +103,7 @@ My next step was to look at the testing datasets. First by comparing tests given
 
 ![image info](img/covid_testing.png)
 
-As you can see, during the beginning of the pandemic, the amount of tests given and the amount of positive results were following a similar slope. However, about the first of second week of April, the positive tests started to decline. That led me to wonder why. After some investigation I have come to the conclusion that it was because during the time where they followed a similar slope, coronavirus tests were only given to people who they really though might of had it because of test availability. But as tests became more available and people started to quarentine and social distance, tests given continues to rise on a daily basis and positive results started to decline.
+As you can see, during the beginning of the pandemic, the amount of tests given and the amount of positive results were following a similar slope. However, about the first of second week of April, the positive tests started to decline. That led me to wonder why. After some investigation I have come to the conclusion that it was because during the time where they followed a similar slope, coronavirus tests were only given to people who they really though might of had it because of test availability. But as tests became more available and people started to quarantine and social distance, tests given continues to rise on a daily basis and positive results started to decline.
 
 I then wondered, how many tests were given and how many of them came back positive?
 
@@ -120,7 +120,7 @@ I then looked at the tests given and compared it with the median household incom
 
 ![image info](img/test_ratio_boxplot.png)
 
-This showed something different; showing that there was indeed more tests given to weathier neighborhoods but the medians seemed very close. This was when I wanted to verify and decided to run my third hypothesis test.
+This showed something different-showing that there was indeed more tests given to weathier neighborhoods but the medians seemed very close. This was when I wanted to verify and decided to run my third hypothesis test.
 
 
 My Null Hypothesis was that there is no difference in the testing rate given and median household incomes, I ran my experiment with a significance level of 0.05. My conclusion was that there is sifficient statistical evidence to say there is a difference in the testing rate given and median household incomes, with a p-value close to 0.
